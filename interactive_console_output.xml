@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20230125 15:38:13.117" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\dell\.vscode\extensions\robocorp.robotframework-lsp-1.8.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Open Pdf" library="RPA.PDF">
+<arg>receipts\receipt_RSB-ROBO-ORDER-I9ITIYEAW.pdf</arg>
+<doc>Open a PDF document for reading.</doc>
+<msg timestamp="20230125 15:38:38.218" level="FAIL">OSError: [WinError 123] The filename, directory name, or volume label syntax is incorrect: 'receipts\receipt_RSB-ROBO-ORDER-I9ITIYEAW.pdf'</msg>
+<status status="FAIL" starttime="20230125 15:38:38.216" endtime="20230125 15:38:38.219"/>
+</kw>
+<kw name="Open Pdf" library="RPA.PDF">
+<arg>receipts\receipt_RSB-ROBO-ORDER-I9ITIYEAW</arg>
+<doc>Open a PDF document for reading.</doc>
+<msg timestamp="20230125 15:39:31.272" level="FAIL">OSError: [WinError 123] The filename, directory name, or volume label syntax is incorrect: 'receipts\receipt_RSB-ROBO-ORDER-I9ITIYEAW'</msg>
+<status status="FAIL" starttime="20230125 15:39:31.271" endtime="20230125 15:39:31.272"/>
+</kw>
+<kw name="Open Pdf" library="RPA.PDF">
+<arg>r'receipts\receipt_RSB-ROBO-ORDER-I9ITIYEAW.pdf'</arg>
+<doc>Open a PDF document for reading.</doc>
+<msg timestamp="20230125 15:59:47.770" level="FAIL">OSError: [WinError 123] The filename, directory name, or volume label syntax is incorrect: "r'receipts\receipt_RSB-ROBO-ORDER-I9ITIYEAW.pdf'"</msg>
+<status status="FAIL" starttime="20230125 15:59:47.769" endtime="20230125 15:59:47.770"/>
+</kw>
+<kw name="Open Pdf" library="RPA.PDF">
+<arg>r'E:\my-rsb-project\receipts\receipt_RSB-ROBO-ORDER-I9ITIYEAW.pdf'</arg>
+<doc>Open a PDF document for reading.</doc>
+<msg timestamp="20230125 16:00:14.548" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: "r'E:my-rsb-project\receipts\receipt_RSB-ROBO-ORDER-I9ITIYEAW.pdf'"</msg>
+<status status="FAIL" starttime="20230125 16:00:14.547" endtime="20230125 16:00:14.549"/>
+</kw>
+<status status="PASS" starttime="20230125 15:38:13.159" endtime="20230125 16:06:24.313"/>
+</kw>
+<status status="PASS" starttime="20230125 15:38:13.157" endtime="20230125 16:06:24.313"/>
+</test>
+<status status="PASS" starttime="20230125 15:38:13.119" endtime="20230125 16:06:24.316"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

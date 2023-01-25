@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20230125 16:13:22.501" rpa="true" schemaversion="3">
+<suite id="s1" name="Tasks" source="e:\my-rsb-project\tasks.robot">
+<test id="s1-t1" name="Order robots from RobotSpareBin Industries Inc" line="24">
+<kw name="Get CSV file url">
+<kw name="Get Secret" library="RPA.Robocorp.Vault">
+<var>${csv_url}</var>
+<arg>rsbvault</arg>
+<doc>Read a secret from the configured source, e.g. Robocorp Vault,
+and return it as a ``Secret`` object.</doc>
+<msg timestamp="20230125 16:13:25.469" level="INFO">Protecting keyword: RPA.Robocorp.Vault.Get Secret</msg>
+<msg timestamp="20230125 16:13:25.469" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230125 16:13:25.469" endtime="20230125 16:13:25.469"/>
+</kw>
+<kw name="Download the CSV file">
+<arg>${csv_url}[value]</arg>
+<kw name="Download" library="RPA.HTTP">
+<arg>${csv_url}</arg>
+<arg>overwrite=True</arg>
+<doc>An alias for the ``HTTP Get`` keyword.</doc>
+<msg timestamp="20230125 16:13:25.477" level="INFO">Creating a new HTTP session</msg>
+<msg timestamp="20230125 16:13:25.477" level="INFO">Creating Session using : alias=rpasession_alias.httpsrobotsparebinindustries.com, url=https://robotsparebinindustries.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg timestamp="20230125 16:13:25.496" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x0000020F2AE49DF0&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /orders.csv</msg>
+<msg timestamp="20230125 16:13:25.702" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x0000020F2AE49CA0&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /orders.csv</msg>
+<msg timestamp="20230125 16:13:26.108" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x0000020F2AB16D90&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /orders.csv</msg>
+<msg timestamp="20230125 16:13:26.110" level="FAIL">ConnectionError: HTTPSConnectionPool(host='robotsparebinindustries.com', port=443): Max retries exceeded with url: /orders.csv (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x0000020F2AB16520&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))</msg>
+<status status="FAIL" starttime="20230125 16:13:25.469" endtime="20230125 16:13:26.117"/>
+</kw>
+<status status="FAIL" starttime="20230125 16:13:25.469" endtime="20230125 16:13:26.117"/>
+</kw>
+<status status="FAIL" starttime="20230125 16:13:25.468" endtime="20230125 16:13:26.125"/>
+</kw>
+<kw name="Open the robot order website">
+<status status="NOT RUN" starttime="20230125 16:13:26.125" endtime="20230125 16:13:26.125"/>
+</kw>
+<kw name="Fill the form using CSV file">
+<status status="NOT RUN" starttime="20230125 16:13:26.125" endtime="20230125 16:13:26.125"/>
+</kw>
+<kw name="Create a ZIP file of the receipts">
+<arg>$name_of_zip</arg>
+<status status="NOT RUN" starttime="20230125 16:13:26.133" endtime="20230125 16:13:26.133"/>
+</kw>
+<kw name="Delete original images">
+<status status="NOT RUN" starttime="20230125 16:13:26.133" endtime="20230125 16:13:26.133"/>
+</kw>
+<kw name="Log out and close the browser">
+<status status="NOT RUN" starttime="20230125 16:13:26.141" endtime="20230125 16:13:26.141"/>
+</kw>
+<status status="FAIL" starttime="20230125 16:13:25.461" endtime="20230125 16:13:26.141">ConnectionError: HTTPSConnectionPool(host='robotsparebinindustries.com', port=443): Max retries exceeded with url: /orders.csv (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x0000020F2AB16520&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))</status>
+</test>
+<doc>Order robots from RobotSpareBin Industries Inc.
+Save the order HTML receipt as a PDF file.
+Save the screenshot of the ordered robot.
+Embeds the screenshot of the robot to the PDF receipt.
+Create ZIP archive of the receipts and the images.</doc>
+<status status="FAIL" starttime="20230125 16:13:22.516" endtime="20230125 16:13:26.141"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tasks">Tasks</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230125 16:13:25.496" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x0000020F2AE49DF0&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /orders.csv</msg>
+<msg timestamp="20230125 16:13:25.702" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x0000020F2AE49CA0&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /orders.csv</msg>
+<msg timestamp="20230125 16:13:26.108" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x0000020F2AB16D90&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /orders.csv</msg>
+</errors>
+</robot>
